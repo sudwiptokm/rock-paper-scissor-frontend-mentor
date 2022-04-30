@@ -8,7 +8,12 @@ export default function Example() {
 
   return (
     <div>
-      <div onClick={() => setOpen(true)}>Rules</div>
+      <div
+        onClick={() => setOpen(true)}
+        className={`${open ? "backdrop-blur-lg" : ""}`}
+      >
+        Rules
+      </div>
       <Transition.Root show={open} as={Fragment}>
         <Dialog
           as="div"
@@ -41,7 +46,7 @@ export default function Example() {
                     <Image
                       src={require("../public/icon-close.svg")}
                       alt="close-icon"
-                      className=""
+                      className="cursor-pointer"
                     />
                   </div>
                   <div className="mt-3 text-center sm:mt-5">

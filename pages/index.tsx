@@ -1,11 +1,18 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import ItemContainer from "../components/ItemContainer";
+import Result from "../components/Result";
 import ScoreCard from "../components/ScoreCard";
+import { random } from "../utils/common";
 
 const Home: NextPage = () => {
+  const [play, setPlay] = useState(true);
+  const [current, setCurrent] = useState(0);
+  const [score, setScore] = useState(0);
+
   return (
     <div>
       <Head>
@@ -14,9 +21,18 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="text-white text-4xl flex flex-col items-center justify-between h-screen">
-        <ScoreCard />
+        <ScoreCard score={score} />
         <div className="mt-24 flex-grow">
-          <ItemContainer />
+          {play ? (
+            <ItemContainer setSelection={setCurrent} changePage={setPlay} />
+          ) : (
+            <Result
+              selection={current}
+              backToPlay={setPlay}
+              score={score}
+              changeScore={setScore}
+            />
+          )}
         </div>
         <div className="">
           <Footer />
