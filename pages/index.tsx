@@ -18,7 +18,7 @@ const Home: NextPage = () => {
     if (play) {
       setAi(x);
     }
-  }, [play === true]);
+  }, [play]);
 
   return (
     <div>
