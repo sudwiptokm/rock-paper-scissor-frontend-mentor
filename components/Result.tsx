@@ -9,31 +9,34 @@ export default function Result({
   backToPlay,
   score,
   changeScore,
+  aiSelection,
 }: any) {
-  let aiSelection = random();
-  let verdict;
+  const [verdict, setVerdict] = useState("");
   let newScore: number;
-  if (aiSelection === selection) {
-    verdict = "DRAW";
-  } else {
-    let dif = aiSelection - 1;
-    if (dif < 0) dif = 2;
-    if (dif === selection) {
-      verdict = "YOU WIN";
-      newScore = score + 1;
-    } else {
-      verdict = "YOU LOSE";
-      newScore = score - 1;
-    }
-  }
 
-  //   useEffect(() => {}, []);
+  useEffect(() => {
+    if (aiSelection === selection) {
+      setVerdict("DRAW");
+    } else {
+      let dif = aiSelection - 1;
+      if (dif < 0) dif = 2;
+      if (dif === selection) {
+        setVerdict("YOU WIN");
+        newScore = score + 1;
+        changeScore(newScore);
+      } else {
+        setVerdict("YOU LOSE");
+        newScore = score - 1;
+        changeScore(newScore);
+      }
+    }
+  }, []);
 
   //Click Handler
   const clickHandler = () => {
     backToPlay(true);
   };
-  console.log(selection, aiSelection, verdict, score);
+
   return (
     <div>
       <div className="flex justify-evenly gap-40">

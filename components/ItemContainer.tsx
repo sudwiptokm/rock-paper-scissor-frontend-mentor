@@ -6,8 +6,9 @@ import Image from "next/image";
 
 export default function ItemContainer({ setSelection, changePage }: any) {
   const clickHandler = (id: number) => {
+    // console.log("item", id);
     setSelection(id);
-    changePage(false);
+    // changePage(false);
   };
 
   return (
@@ -19,16 +20,23 @@ export default function ItemContainer({ setSelection, changePage }: any) {
         ></Image>
       </div>
       <div className="flex justify-between">
-        <div onClick={() => clickHandler(0)}>
+        <div
+          onMouseDown={() => clickHandler(0)}
+          onClick={() => changePage(false)}
+        >
           <Paper />
         </div>
-        <div onClick={() => clickHandler(2)}>
+        <div
+          onMouseDown={() => clickHandler(2)}
+          onClick={() => changePage(false)}
+        >
           <Scissors />
         </div>
       </div>
       <div
         className="flex justify-center mt-24 ml-2"
-        onClick={() => clickHandler(1)}
+        onMouseDown={() => clickHandler(1)}
+        onClick={() => changePage(false)}
       >
         <Rock />
       </div>
