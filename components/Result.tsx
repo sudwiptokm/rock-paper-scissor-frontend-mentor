@@ -42,7 +42,7 @@ export default function Result({
     <div>
       <div className="flex justify-evenly gap-40">
         <div className="flex flex-col justify-center items-center">
-          <p className="font-bold">YOUR PICK</p>
+          <p className="font-bold text-center">YOUR PICK</p>
           <div className="scale-150 mt-20">
             {selection === 0 ? (
               <Paper />
@@ -63,7 +63,7 @@ export default function Result({
           </div>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <p className="font-bold">THE HOUSE PICK</p>
+          <p className="font-bold text-center">THE HOUSE PICK</p>
           <div className="scale-150 mt-20">
             {aiSelection === 0 ? (
               <Paper />
