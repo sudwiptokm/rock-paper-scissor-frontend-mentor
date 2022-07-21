@@ -22,6 +22,7 @@ export default function Result({
       if (dif < 0) dif = 2;
       if (dif === selection) {
         setVerdict("YOU WIN");
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         newScore = score + 1;
         changeScore(newScore);
       } else {

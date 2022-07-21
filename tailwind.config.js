@@ -5,7 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      screens: { mobile: { min: "370px", max: "640px" } },
+      screens: {
+        mobile: { min: "370px", max: "640px" },
+        mobile2: { min: "370px", max: "460px" },
+      },
       scale: {
         25: "0.25",
         40: "0.40",

@@ -13,7 +13,7 @@ export default function ItemContainer({ setSelection, changePage }: any) {
 
   return (
     <div className="w-[450px] relative">
-      <div className="absolute top-20 left-20 -z-10">
+      <div className="absolute top-20 mobile2:left-10 mobile:left-20 sm:left-20 -z-10">
         <Image
           src={require(`../public/bg-triangle.svg`)}
           alt="triangle"
