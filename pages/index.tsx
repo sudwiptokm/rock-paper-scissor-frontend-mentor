@@ -29,11 +29,11 @@ const Home: NextPage = () => {
       </Head>
       <div className="text-white text-4xl flex flex-col items-center justify-between h-screen w-screen">
         <ScoreCard score={score} />
-        <div className="mt-24 flex-grow mobile:scale-75 sm:scale-0 w-full">
+        <div className="mt-24 flex-grow mobile:scale-75 sm:scale-100 w-full flex justify-center">
           {play ? (
             <ItemContainer setSelection={setCurrent} changePage={setPlay} />
           ) : (
-            <div className="mobile:scale-50">
+            <div className="mobile:scale-50 sm:scale-75">
               <Result
                 selection={current}
                 backToPlay={setPlay}

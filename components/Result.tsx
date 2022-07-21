@@ -53,9 +53,9 @@ export default function Result({
           </div>
         </div>
         <div className="scale-150 flex flex-col justify-center items-center ml-10">
-          <p className="font-bold">{verdict}</p>
+          <p className="font-bold text-center">{verdict}</p>
           <div
-            className="bg-white text-[#2a46c0] px-4 py-2 rounded-lg text-lg mt-5 cursor-pointer"
+            className="bg-white text-[#2a46c0] px-4 py-2 rounded-lg text-lg mt-5 cursor-pointer text-center"
             onClick={clickHandler}
           >
             PLAY AGAIN
